@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .move-list-dep2 {
+            height: 0;
+            overflow: hidden;
+        }
+
+        .active .move-list-dep2 {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="nav">
+            <a href="#" class="btn">
+                가나다
+            </a>
+            <ul class="move-list-dep2">
+                <li>라</li>
+                <li>미</li>
+                <li>바</li>
+                <li>사</li>
+                <li>사</li>
+                <li>사</li>
+                <li>사</li>
+            </ul>
+        </li>
+        <li class="nav">
+            <a href="#" class="btn">아자차</a>
+            <ul class="move-list-dep2">
+                <li>카</li>
+                <li>타</li>
+                <li>파</li>
+            </ul>
+        </li>
+        <li class="nav">
+            <a href="#" class="btn">아자차</a>
+
+            <ul class="move-list-dep2">
+                <li>카</li>
+                <li>타</li>
+                <li>파</li>
+                <li>하</li>
+            </ul>
+        </li>
+        <li class="nav">
+            <a href="#" class="btn">아자차</a>
+            <ul class="move-list-dep2">
+                <li>카</li>
+                <li>타</li>
+                <li>파</li>
+                <li>하</li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        // for(var i = 0; i < document.querySelectorAll(".nav li").length; i++){
+        //     document.querySelectorAll(".nav li").addEventListener("click", function() {
+        //         alert("안녕")
+        //     })
+        // }
+
+        const nav01 = document.querySelectorAll(".nav");
+        const nav02 = document.querySelectorAll(".move-list-dep2");
+        const click = ""; //홀수로 클릭하면 바뀌는 그런 걸 할 줄 알았었는데,,, 까먹엇어ㅜㅜ
+
+        for (var i = 0; i < nav01.length; i++) {
+            nav01[i].querySelector(".btn").addEventListener("click", function (e) {
+                e.preventDefault();
+                for (var j = 0; j < nav01.length; j++) {
+                    nav01[j].classList.remove("active");
+                }
+                this.parentNode.classList.add("active");
+            })
+        }
+
+
+    </script>
+</body>
+
+</html>

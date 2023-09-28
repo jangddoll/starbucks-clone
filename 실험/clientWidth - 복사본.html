@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        /* width 값이 얘를 따라감 */
+        #wrapper {
+            width: 100%;
+            height: 421px;
+        }
+
+        
+        .slide-box {
+            width: 620px;
+            height: 421px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* 뷰포트 */
+        #slideShow {
+            /*전체 컨테이너*/
+            width: 100%;
+            height: 345px;
+            position: relative;
+            overflow: hidden;
+            /*리스트 형식으로 이미지를 일렬로 정렬할 것이기 때문에, 500px 밖으로 튀어 나간 이미지들은 hidden으로 숨겨줘야됨*/
+        }
+
+        /* 움직이는 컨테이너 */
+        .slides {
+            /*이미지들이 담겨있는 슬라이드 컨테이너*/
+            position: relative;
+            width: 515%;
+            /* 슬라이드할 사진과 마진 총 넓이 */
+            transition: 0.5s ease-out;
+            /*ease-out: 처음에는 느렸다가 점점 빨라짐*/
+            margin-left: 55px;
+            transform: translate3d(-510px, 0, 0);
+        }
+
+        /* .slides li{
+            width: 500px;
+        } */
+        /* 첫 번째 슬라이드 가운데에 정렬하기위해 첫번째 슬라이드만 margin-left조정 */
+
+        /* 슬라이드들 옆으로 정렬 */
+        .slides li {
+            margin: 0 5px;
+        }
+
+        .slides li img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .controller span {
+            position: absolute;
+            background-color: transparent;
+            color: black;
+            text-align: center;
+            border-radius: 50%;
+            padding: 10px 20px;
+            top: 50%;
+            font-size: 1.3em;
+            cursor: pointer;
+        }
+
+        /* 이전, 다음 화살표에 마우스 커서가 올라가 있을때 */
+        .controller span:hover {
+            background-color: rgba(128, 128, 128, 0.11);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        /* 이전 화살표에 마우스 커서가 올라가 있을때 이전 화살표가 살짝 왼쪽으로 이동하는 효과*/
+        .prev:hover {
+            transform: translateX(-10px);
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* 다음 화살표에 마우스 커서가 올라가 있을때 이전 화살표가 살짝 오른쪽으로 이동하는 효과*/
+        .next:hover {
+            transform: translateX(10px);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="slide-box">
+            <div id="slideShow">
+                <ul class="slides">
+                    <li class="slide" style="float: left; list-style: none; position: relative;"><img
+                            src="./images/promotion/FbOy46_20230102123439782.jpg" alt=""></li>
+                    <li class="slide" style="float: left; list-style: none; position: relative;"><img
+                            src="images/promotion/ipzH3U_20230706154855091.jpg" alt=""></li>
+                    <li class="slide" style="float: left; list-style: none; position: relative;"><img
+                            src="images/promotion/oJ7QKF_20230425084350288.jpg" alt=""></li>
+                </ul>
+                <p class="controller">
+                    <!-- &lang: 왼쪽 방향 화살표 &rang: 오른쪽 방향 화살표 -->
+                    <span class="prev">&lang;</span>
+                    <span class="next">&rang;</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        //창 크기 변화할 때마다 width값이 바뀜
+        window.onresize = function (event) {
+            let width = document.querySelector("#wrapper").getBoundingClientRect();
+            let slideWidth = width.width;
+            const slideMargin = 10;
+
+            const slides = document.querySelector(".slides");
+            const slideImg = document.querySelectorAll(".slides li");
+            let currentIdx = 0;
+            const slideCount = slideImg.length;
+            const prev = document.querySelector(".prev");
+            const next = document.querySelector(".next");
+
+            for (var i = 0; i < slideImg.length; i++) {
+                slideImg[i].style.width = slideWidth + "px";
+            }
+
+            initfunction();
+            function initfunction() {
+                slides.style.width = (slideWidth + slideMargin) * (slideCount + 2) + "px";
+                slides.style.left - (slideWidth + slideMargin) + "px";
+            }
+
+
+
+        }
+        let width = document.querySelector("#wrapper").getBoundingClientRect();
+        let slideWidth = width.width;
+        const slideMargin = 10;
+
+        const slides = document.querySelector(".slides");
+        const slideImg = document.querySelectorAll(".slides li");
+        makeClone()
+        function makeClone() {
+            let cloneSlide_first = slideImg[0].cloneNode(true);
+            let cloneSlide_last = slides.lastElementChild.cloneNode(true);
+
+            slides.append(cloneSlide_first);
+            slides.insertBefore(cloneSlide_last, slides.firstElementChild);
+        }
+
+
+        // function initfunction() {
+        //     slides.style.width = (slideWidth + slideMargin) * (slideCount + 2) + 'px';
+        //     slides.style.left = -(slideWidth + slideMargin) + 'px';
+        // }
+        // next.addEventListener('click', function () {
+        //     //다음 버튼 눌렀을때
+        //     if (currentIdx <= slideCount - 1) {
+        //         //슬라이드이동
+        //         slides.style.left = -(currentIdx + 2) * (slideWidth + slideMargin) + 'px';
+        //         slides.style.transition = `${0.5}s ease-out`; //이동 속도
+        //     }
+        //     if (currentIdx === slideCount - 1) {
+        //         //마지막 슬라이드 일때
+        //         setTimeout(function () {
+        //             //0.5초동안 복사한 첫번째 이미지에서, 진짜 첫번째 위치로 이동
+        //             slides.style.left = -(slideWidth + slideMargin) + 'px';
+        //             slides.style.transition = `${0}s`;
+        //         }, 500);
+        //         currentIdx = -1;
+        //     }
+        //     currentIdx += 1;
+        // });
+        // prev.addEventListener('click', function () {
+        //     //이전 버튼 눌렀을때
+        //     console.log(currentIdx);
+        //     if (currentIdx >= 0) {
+        //         slides.style.left = -currentIdx * (slideWidth + slideMargin) + 'px';
+        //         slides.style.transition = `${0.5}s ease-out`;
+        //     }
+        //     if (currentIdx === 0) {
+        //         setTimeout(function () {
+        //             slides.style.left = -slideCount * (slideWidth + slideMargin) + 'px';
+        //             slides.style.transition = `${0}s`;
+        //         }, 500);
+        //         currentIdx = slideCount;
+        //     }
+        //     currentIdx -= 1;
+        // });
+
+    </script>
+
+    <!-- <script>
+        
+        
+        function initfunction() {
+            slides.style.width = (slideWidth + slideMargin) * (slideCount + 2) + 'px';
+            slides.style.left = -(slideWidth + slideMargin) + 'px';
+        }
+        next.addEventListener('click', function () {
+            //다음 버튼 눌렀을때
+            if (currentIdx <= slideCount - 1) {
+                //슬라이드이동
+                slides.style.left = -(currentIdx + 2) * (slideWidth + slideMargin) + 'px';
+                slides.style.transition = `${0.5}s ease-out`; //이동 속도
+            }
+            if (currentIdx === slideCount - 1) {
+                //마지막 슬라이드 일때
+                setTimeout(function () {
+                    //0.5초동안 복사한 첫번째 이미지에서, 진짜 첫번째 위치로 이동
+                    slides.style.left = -(slideWidth + slideMargin) + 'px';
+                    slides.style.transition = `${0}s ease-out`;
+                }, 500);
+                currentIdx = -1;
+            }
+            currentIdx += 1;
+        });
+        prev.addEventListener('click', function () {
+            //이전 버튼 눌렀을때
+            console.log(currentIdx);
+            if (currentIdx >= 0) {
+                slides.style.left = -currentIdx * (slideWidth + slideMargin) + 'px';
+                slides.style.transition = `${0.5}s ease-out`;
+            }
+            if (currentIdx === 0) {
+                setTimeout(function () {
+                    slides.style.left = -slideCount * (slideWidth + slideMargin) + 'px';
+                    slides.style.transition = `${0}s ease-out`;
+                }, 500);
+                currentIdx = slideCount;
+            }
+            currentIdx -= 1;
+        }); -->
+    </script>
+</body>
+
+</html>
