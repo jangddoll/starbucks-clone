@@ -110,10 +110,6 @@
     padding: 0;
 }
 
-.promotion .swiper-box .swiper-viewport{
-    /* overflow: hidden; */
-}
-
 .promotion .swiper-box .margin-box .swiper-viewport .swiper-wrapper .swiper-slide img {
     position: relative;
     opacity: .5;
