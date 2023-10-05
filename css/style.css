@@ -666,13 +666,11 @@
     position: relative;
     overflow: hidden;
 }
-
-.pick .inner {
+.pick .inner{
     width: 100%;
     height: 100%;
 }
-
-.pick .inner .pick-txt01 {
+.pick .pick-txt01 {
     width: 250px;
     height: 72px;
     position: absolute;
@@ -681,10 +679,9 @@
     transform: translateX(-50%);
     background: url("../images/pick/mobile_menu_txt01.png") no-repeat;
     background-size: 100% auto;
-    transition: opacity 1s;
 }
 
-.pick .inner .pick-txt02 {
+.pick .pick-txt02 {
     width: 300px;
     height: 129px;
     background: url("../images/pick/mobile_menu_txt02.png") no-repeat;
@@ -696,7 +693,7 @@
     transition: opacity 1.5s;
 }
 
-.pick .inner .pick-img {
+.pick .pick-img {
     position: relative;
     width: 80%;
     height: 395px;
@@ -707,7 +704,7 @@
     margin-right: auto;
 }
 
-.pick .inner .pick-btn {
+.pick .pick-btn {
     width: 115px;
     height: 34px;
     position: absolute;
@@ -716,7 +713,7 @@
     transform: translateX(-50%);
 }
 
-.pick .inner .pick-btn .btn {
+.pick .pick-btn .btn {
     width: 100%;
     height: 100%;
     line-height: 32px;
@@ -727,7 +724,7 @@
     transition: opacity 2s;
 }
 
-.pick .inner .pick-btn .btn:hover {
+.pick .pick-btn .btn:hover {
     background: #fff;
     color: #000;
     font-weight: bold;
@@ -1991,7 +1988,7 @@
         position: relative;
     }
 
-    .pick .inner .pick-txt01 {
+    .pick .pick-txt01 {
         background: url("../images/pick/fav_prod_txt01.png") no-repeat;
         width: 260px;
         height: 204px;
@@ -2002,11 +1999,11 @@
         transition: left 1.5s;
     }
 
-    .pick .inner .pick-txt01.on {
+    .pick .pick-txt01.on {
         left: 200px;
     }
 
-    .pick .inner .pick-txt02 {
+    .pick .pick-txt02 {
         width: 360px;
         height: 160px;
         top: 417px;
@@ -2017,11 +2014,11 @@
         transition: left 2.5s;
     }
 
-    .pick .inner .pick-txt02.on {
+    .pick .pick-txt02.on {
         left: 97px;
     }
 
-    .pick .inner .pick-img {
+    .pick .pick-img {
         width: 720px;
         height: 475px;
         position: absolute;
@@ -2031,7 +2028,7 @@
         margin: 0;
     }
 
-    .pick .inner .pick-btn {
+    .pick .pick-btn {
         top: 602px;
         left: 391px;
     }

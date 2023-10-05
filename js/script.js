@@ -30,30 +30,28 @@ moBtn.addEventListener("click", function () {
 })
 
 //move-nav
-
 const navTit = document.querySelectorAll("nav .move-list-dep1 .tit");
 const navList = document.querySelectorAll("nav .move-list-dep2");
 
 function navClick(e) {
-    for(var i = 0; i < navList.length; i++){ 
+    for (var i = 0; i < navList.length; i++) {
         e.currentTarget.parentNode.classList.toggle("on")
     }
 }
+for (var i = 0; i < navTit.length; i++) {
+    navTit[i].addEventListener("click", navClick);
+}
+
 function navClick02(e) {
-    for(var i = 0; i < navList.length; i++){
+    for (var i = 0; i < navList.length; i++) {
         e.target.parentNode.classList.toggle("on")
     }
 }
-
-for(var i = 0; i < navTit.length; i++) {
-   navTit[i].addEventListener("click", navClick);
-}
-
-for(var i = 0; i < navList.length; i++){
+for (var i = 0; i < navList.length; i++) {
     navList[i].addEventListener("click", navClick02);
 }
 
-//main-visual
+//main-visual gsap
 const fadeEls = document.querySelectorAll(".main-visual .fade-in");
 fadeEls.forEach(function (fadeEl, index) {
     gsap.to(fadeEl, 1, {
@@ -62,14 +60,14 @@ fadeEls.forEach(function (fadeEl, index) {
     });
 });
 
-//notice
+//notice swiper
 var swiper1 = new Swiper(".notice .swiper", {
     direction: "vertical",
     autoplay: true,
     loop: true
 });
 
-//main-banner
+//main-banner gsap
 gsap.to(".main-banner .fade-in", {
     duration: 3,
     opacity: 1
@@ -79,91 +77,105 @@ gsap.to(".main-banner .move", {
     x: 0
 });
 
-//reserve
+//reserve gsap
 gsap.to(".reserve .fade-in", {
     duration: 3,
     opacity: 1
 });
 
 //Pick
+gsap.registerPlugin(ScrollTrigger);
+
 //모바일 버전
-(function () {
-    var controller = new ScrollMagic.Controller();
-    var tweenStagger = TweenMax.staggerFromTo(".pick .fade-in", 1,
-        {
-            opacity: 0
-        },
-        {
-            opacity: 1
-        },
-        0.3
-    );
-    var scene = new ScrollMagic.Scene({
-        triggerElement: ".pick-txt01",
-        duration: 300,
-    })
-        .setTween(tweenStagger)
-        .addTo(controller)
+gsap.to(".pick .fade-in", {
+    scrollTrigger: {
+        trigger: ".pick",
+        start: "300px center",
+        end: "bottom 200px",
+        markers: true,
+        toggleActions: "restart none none reverse"
+    },
+    duration: 0.3,
+    opacity: 1
+})
 
-    //PC 버전
-    const moveEls = document.querySelectorAll(".move");
-    moveEls.forEach(function (moveEl) {
-        new ScrollMagic
-            .Scene({
-                triggerElement: ".pick-txt01"
-            })
-            .addTo(controller)
-            .setClassToggle(".move", "on")
-    })
-}());
+//pc 버전
+gsap.to(".pick .move01", {
+    scrollTrigger: {
+        trigger: ".pick",
+        markers: true,
+        start: "top center",
+        end: "bottom 200px",
+        toggleActions: "restart none none reverse",
+        toggleClass: {
+            targets: ".move01", 
+            className: "on"
+        }
+    },
+})
+gsap.to(".pick .move02", {
+    scrollTrigger: {
+        trigger: ".pick",
+        markers: true,
+        start: "top center",
+        end: "bottom 200px",
+        toggleActions: "restart none none reverse",
+        toggleClass: {
+            targets: ".move02",
+            className: "on"
+        }
+    },
+    
+})
 
-
-//magazine
+//magazine gsap
 gsap.to(".magazine .fade-in", {
     duration: 3,
     opacity: 1
 });
 
 // store
-(function () {
-    var controller = new ScrollMagic.Controller();
+gsap.registerPlugin(ScrollTrigger);
 
-    var scene1 = new ScrollMagic.Scene({
-        triggerElement: ".store"
-    })
-        .addTo(controller)
-        .setClassToggle(".store-text01", "on")
-    var scene2 = new ScrollMagic.Scene({
-        triggerElement: ".store-img02"
-    })
-        .addTo(controller)
-        .setClassToggle(".store-text02", "on")
+// (function () {
+//     var controller = new ScrollMagic.Controller();
 
-    var scene3 = new ScrollMagic.Scene({
-        triggerElement: ".store .store-img03",
-        offset: 100
-    })
-        .addTo(controller)
-        .setClassToggle(".store-btn", "on")
+//     var scene1 = new ScrollMagic.Scene({
+//         triggerElement: ".store"
+//     })
+//         .addTo(controller)
+//         .setClassToggle(".store-text01", "on")
+//     var scene2 = new ScrollMagic.Scene({
+//         triggerElement: ".store-img02"
+//     })
+//         .addTo(controller)
+//         .setClassToggle(".store-text02", "on")
 
-    var tweenStagger = TweenMax.staggerFromTo(".store .move", 0.5,
-        {
-            opacity: 0,
-            right: -700
-        },
-        {
-            opacity: 1,
-            right: 260
-        },
-        0.3
-    );
-    var scene4 = new ScrollMagic.Scene({
-        triggerElement: ".store",
-        offset: -100
-    })
-        .setTween(tweenStagger)
-        .addTo(controller)
-}());
+//     var scene3 = new ScrollMagic.Scene({
+//         triggerElement: ".store .store-img03",
+//         offset: 100
+//     })
+//         .addTo(controller)
+//         .setClassToggle(".store-btn", "on")
+
+//     var tweenStagger = TweenMax.staggerFromTo(".store .move", 0.5,
+//         {
+//             opacity: 0,
+//             right: -700
+//         },
+//         {
+//             opacity: 1,
+//             right: 260
+//         },
+//         0.3
+//     );
+//     var scene4 = new ScrollMagic.Scene({
+//         triggerElement: ".store",
+//         offset: -100
+//     })
+//         .setTween(tweenStagger)
+//         .addTo(controller)
+// }());
 
 //fnb
 const fnb01 = document.querySelectorAll(".fnb-item-dep1");

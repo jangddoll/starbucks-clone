@@ -22,20 +22,16 @@
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-    <!-- gsap -->
+    <!-- GSAP/ScrollTrigger -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script defer src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-    <script defer src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
-
-    <!-- ScrollMagic -->
-    <script defer src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-    <script defer src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <!-- reset CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
 
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/style.css">
+
     <script defer src="./js/script.js"></script>
 
 </head>
@@ -48,7 +44,7 @@
 
                 <!-- start : M-HEADER -->
                 <h1 class="logo">
-                    <a href="#">
+                    <a href="#" onclick="return false;">
                         <img src="./images/header/logo.png" alt="로고">
                     </a>
                 </h1>
@@ -66,7 +62,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="berger">
+                        <a href="#" class="berger" onclick="return false;">
                             <img src="./images/header/btn_berger_m.png" alt="berger-btn">
                         </a>
                     </li>
@@ -1501,8 +1497,8 @@
         <!-- start : PICK -->
         <section class="pick">
             <div class="inner">
-                <div class="pick-txt pick-txt01 fade-in move"></div>
-                <div class="pick-txt pick-txt02 fade-in move"></div>
+                <div class="pick-txt pick-txt01 fade-in move01"></div>
+                <div class="pick-txt pick-txt02 fade-in move02"></div>
                 <div class="pick-img"></div>
                 <div class="pick-btn">
                     <a href="#" onclick="return false;" class="btn fade-in">자세히 보기</a>
