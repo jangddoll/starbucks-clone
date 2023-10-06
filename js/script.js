@@ -86,46 +86,84 @@ gsap.to(".reserve .fade-in", {
 //Pick
 gsap.registerPlugin(ScrollTrigger);
 
-//모바일 버전
-gsap.to(".pick .fade-in", {
-    scrollTrigger: {
-        trigger: ".pick",
-        start: "300px center",
-        end: "bottom 200px",
-        markers: true,
-        toggleActions: "restart none none reverse"
-    },
-    duration: 0.3,
-    opacity: 1
-})
 
-//pc 버전
-gsap.to(".pick .move01", {
-    scrollTrigger: {
-        trigger: ".pick",
-        markers: true,
-        start: "top center",
-        end: "bottom 200px",
-        toggleActions: "restart none none reverse",
-        toggleClass: {
-            targets: ".move01", 
-            className: "on"
-        }
+ScrollTrigger.matchMedia({
+    // mobile
+    "(max-width: 959px)": function () {
+        gsap.to(".pick .move01", {
+            scrollTrigger: {
+                trigger: ".pick",
+                start: "400px center",
+                end: "bottom 200px",
+                toggleActions: "restart none none reverse"
+            },
+            duration: 1,
+            opacity: 1
+        });
+        gsap.to(".pick .move02", {
+            scrollTrigger: {
+                trigger: ".pick",
+                start: "400px center",
+                end: "bottom 200px",
+                toggleActions: "restart none none reverse"
+            },
+            opacity: 1,
+            duration: 1,
+            delay: 0.5
+        });
+        gsap.to(".pick .pick-btn", {
+            scrollTrigger: {
+                trigger: ".pick",
+                start: "400px center",
+                end: "bottom 200px",
+                toggleActions: "restart none none reverse"
+            },
+            opacity: 1,
+            duration: 1,
+            delay: 1.5
+        });
     },
-})
-gsap.to(".pick .move02", {
-    scrollTrigger: {
-        trigger: ".pick",
-        markers: true,
-        start: "top center",
-        end: "bottom 200px",
-        toggleActions: "restart none none reverse",
-        toggleClass: {
-            targets: ".move02",
-            className: "on"
-        }
-    },
-    
+    // PC
+    "(min-width: 960px)": function () {
+        gsap.to(".pick .move01", {
+            scrollTrigger: {
+                trigger: ".pick",
+                start: "top center",
+                endTrigger: ".footer",
+                end: "bottom 200px",
+                toggleActions: "restart none none reverse"
+            },
+            left: "200px",
+            opacity: 1,
+            duration: 1.5
+        })
+        gsap.to(".pick .move02", {
+            scrollTrigger: {
+                trigger: ".pick",
+                start: "top center",
+                endTrigger: ".footer",
+                end: "bottom 200px",
+                toggleActions: "restart none none reverse",
+            },
+            left: "97px",
+            opacity: 1,
+            duration: 1.5,
+            delay: 0.5
+        })
+        gsap.to(".pick .pick-btn", {
+            scrollTrigger: {
+                trigger: ".pick",
+                start: "top center",
+                endTrigger: ".footer",
+                end: "bottom 200px",
+                toggleActions: "restart none none reverse",
+            },
+            opacity: 1,
+            duration: 1.5,
+            delay: 1.5
+        })
+    }
+
 })
 
 //magazine gsap
@@ -137,45 +175,96 @@ gsap.to(".magazine .fade-in", {
 // store
 gsap.registerPlugin(ScrollTrigger);
 
-// (function () {
-//     var controller = new ScrollMagic.Controller();
+ScrollTrigger.matchMedia({
+    //mobile
+    "(max-width: 959px)": function() {
+        gsap.to(".store .store-txt01", {
+            scrollTrigger: {
+                trigger: ".store",
+                start: "top center",
+                endTrigger: ".footer",
+                end: "bottom 200px",
+                markers: true,
+                toggleActions: "restart none none reverse",
+            },
+            top: 360,
+            opacity: 1,
+            duration: 1.5
+        })
+        gsap.to(".store .store-txt02", {
+            scrollTrigger: {
+                trigger: ".store",
+                start: "top center",
+                endTrigger: ".footer",
+                end: "bottom 200px",
+                markers: true,
+                toggleActions: "restart none none reverse"
+            },
+            top: 430,
+            opacity: 1,
+            duration: 1.5,
+            delay: 0.5
+        })
+        gsap.to(".store .store-btn", {
+            scrollTrigger: {
+                trigger: ".store",
+                start: "top center",
+                endTrigger: ".footer",
+                end: "bottom 200px",
+                markers: true,
+                toggleActions: "restart none none reverse"
+            },
+            opacity: 1,
+            duration: 1.5,
+            delay: 1.5
+        })
+    },
 
-//     var scene1 = new ScrollMagic.Scene({
-//         triggerElement: ".store"
-//     })
-//         .addTo(controller)
-//         .setClassToggle(".store-text01", "on")
-//     var scene2 = new ScrollMagic.Scene({
-//         triggerElement: ".store-img02"
-//     })
-//         .addTo(controller)
-//         .setClassToggle(".store-text02", "on")
-
-//     var scene3 = new ScrollMagic.Scene({
-//         triggerElement: ".store .store-img03",
-//         offset: 100
-//     })
-//         .addTo(controller)
-//         .setClassToggle(".store-btn", "on")
-
-//     var tweenStagger = TweenMax.staggerFromTo(".store .move", 0.5,
-//         {
-//             opacity: 0,
-//             right: -700
-//         },
-//         {
-//             opacity: 1,
-//             right: 260
-//         },
-//         0.3
-//     );
-//     var scene4 = new ScrollMagic.Scene({
-//         triggerElement: ".store",
-//         offset: -100
-//     })
-//         .setTween(tweenStagger)
-//         .addTo(controller)
-// }());
+    //PC
+    "(min-width: 960px)": function (){
+        gsap.to(".store .store-txt01", {
+            scrollTrigger: {
+                trigger: ".store",
+                start: "top center",
+                endTrigger: ".footer",
+                end: "bottom 200px",
+                markers: true,
+                toggleActions: "restart none none reverse"
+            },
+            opacity: 1,
+            right: 162,
+            duration: 1.5
+        })
+        gsap.to(".store .store-txt02", {
+            scrollTrigger: {
+                trigger: ".store",
+                start: "top center",
+                endTrigger: ".footer",
+                end: "bottom 200px",
+                markers: true,
+                toggleActions: "restart none none reverse"
+            },
+            opacity: 1,
+            right: 168,
+            duration: 1.5,
+            delay: 0.5
+        })
+        gsap.to(".store .store-btn", {
+            scrollTrigger: {
+                trigger: ".store",
+                start: "top center",
+                endTrigger: ".footer",
+                end: "bottom 200px",
+                markers: true,
+                toggleActions: "restart none none reverse"
+            },
+            opacity: 1,
+            right: 408,
+            duration: 1.5,
+            delay: 1
+        })
+    }
+})
 
 //fnb
 const fnb01 = document.querySelectorAll(".fnb-item-dep1");

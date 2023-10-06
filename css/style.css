@@ -627,7 +627,7 @@
 .reserve .inner .reserve-btn .btn {
     width: 100%;
     height: 100%;
-    font-size: 23px;
+    font-size: 14px;
     line-height: 10vw;
     color: #fff;
     border: 2px solid #fff;
@@ -639,13 +639,6 @@
     color: #000;
     font-weight: bold;
 }
-
-@media all and (max-width: 480px) {
-    .reserve .inner .reserve-btn .btn {
-        font-size: 14px;
-    }
-}
-
 /* end : RESERVE */
 
 /* start : PICK */
@@ -679,6 +672,7 @@
     transform: translateX(-50%);
     background: url("../images/pick/mobile_menu_txt01.png") no-repeat;
     background-size: 100% auto;
+    opacity: 0;
 }
 
 .pick .pick-txt02 {
@@ -690,7 +684,7 @@
     top: 77%;
     left: 50%;
     transform: translateX(-50%);
-    transition: opacity 1.5s;
+    opacity: 0;
 }
 
 .pick .pick-img {
@@ -711,6 +705,7 @@
     top: 89%;
     left: 50%;
     transform: translateX(-50%);
+    opacity: 0;
 }
 
 .pick .pick-btn .btn {
@@ -721,7 +716,6 @@
     color: #fff;
     border: solid 2px #fff;
     border-radius: 5px;
-    transition: opacity 2s;
 }
 
 .pick .pick-btn .btn:hover {
@@ -771,102 +765,6 @@
 
 /* end : MAGAZINE */
 
-/* main-banner 반응형 */
-@media all and (max-width: 1500px) {
-    .main-banner {
-        height: 500px;
-    }
-
-    .main-banner .inner .img-box {
-        width: 17%;
-    }
-
-    .main-banner .inner .txt-box {
-        width: 32%;
-    }
-}
-
-@media all and (max-width: 1200px) {
-    .main-banner {
-        height: 43vw;
-    }
-
-    .main-banner .inner {
-        max-width: 1124px;
-        position: relative;
-    }
-
-    .main-banner .inner .img-box {
-        width: 17%;
-    }
-
-    .main-banner .inner .txt-box {
-        width: 30%;
-    }
-}
-
-@media all and (max-width: 960px) {
-    .main-banner .pc-img {
-        display: none;
-    }
-
-    .main-banner .mobile-img {
-        display: block;
-        width: 100%;
-    }
-
-    .btn.fade-in {
-        display: block;
-    }
-
-    .btn.move {
-        display: none;
-    }
-
-    .main-banner {
-        background: url("../images/ad01/2023_m_summer2_promotion_bg_1.jpg")center/cover no-repeat;
-        height: 175vw;
-        position: relative;
-    }
-
-    .main-banner .inner {
-        position: relative;
-        max-width: 1124px;
-        margin: 0 auto;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .main-banner .inner .img-box {
-        margin-top: 14%;
-        width: 34.5%;
-    }
-
-    .main-banner .inner .txt-box {
-        width: 50%;
-        height: 100%;
-        margin: 13% 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-
-    .main-banner .inner .txt-box .ban-btn {
-        width: 73%;
-        height: auto;
-        margin: 0 auto;
-    }
-
-    .main-banner .inner .txt-box .ban-btn .btn {
-        line-height: 10vw;
-        font-size: 23px;
-        margin-top: 13%;
-    }
-
-}
-
-/* end : main-banner 반응형 */
-
 /* start : STORE */
 
 .store {
@@ -906,20 +804,18 @@
     position: absolute;
 }
 
-.store .store-inner .store-text01 {
+.store .store-inner .store-txt01 {
     background: url("../images/store/m_main_story_txt_1.png");
     background-size: 100% auto;
     position: absolute;
     opacity: 0;
-    transition: all 0.5s;
 }
 
-.store .store-inner .store-text02 {
+.store .store-inner .store-txt02 {
     background: url("../images/store/m_main_story_txt_2.png");
     background-size: 100% auto;
     position: absolute;
     opacity: 0;
-    transition: all 0.5s;
 }
 
 .store .store-inner .store-btn {
@@ -930,11 +826,6 @@
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-    transition: all 0.5s;
-}
-
-.store .store-inner .store-btn.on {
-    opacity: 1;
 }
 
 .store .store-inner .store-btn .btn {
@@ -969,18 +860,18 @@
     height: 100%;
 }
 
-.copyright .copy-text {
+.copyright .copy-txt {
     width: 310px;
     margin: 0 auto;
     text-align: center;
 }
 
-.copyright .copy-text li {
+.copyright .copy-txt li {
     display: inline-block;
     position: relative;
 }
 
-.copyright .copy-text li::after {
+.copyright .copy-txt li::after {
     content: "|";
     display: inline-block;
     color: #393939;
@@ -989,18 +880,18 @@
     right: 0;
 }
 
-.copyright .copy-text li:last-child::after {
+.copyright .copy-txt li:last-child::after {
     display: none;
 }
 
-.copyright .copy-text li a {
+.copyright .copy-txt li a {
     color: #ccc;
     font-weight: bold;
     font-size: 12px;
     padding: 0 10px;
 }
 
-.copyright .copy-text li.highlight a {
+.copyright .copy-txt li.highlight a {
     color: #00b050;
 }
 
@@ -1093,7 +984,7 @@
         right: 0;
     }
 
-    .store .store-inner .store-text01 {
+    .store .store-inner .store-txt01 {
         width: 312px;
         height: 45px;
         position: absolute;
@@ -1103,12 +994,7 @@
         opacity: 0;
     }
 
-    .store .store-inner .store-text01.on {
-        top: 360px;
-        opacity: 1;
-    }
-
-    .store .store-inner .store-text02 {
+    .store .store-inner .store-txt02 {
         width: 300px;
         height: 89px;
         position: absolute;
@@ -1116,15 +1002,6 @@
         left: 50%;
         transform: translateX(-50%);
         opacity: 0;
-    }
-
-    .store .store-inner .store-text02.on {
-        top: 430px;
-        opacity: 1;
-    }
-
-    .store .store-inner .store-btn.on {
-        opacity: 1;
     }
 
     /* end : STORE */
@@ -1167,7 +1044,7 @@
         top: 675px;
     }
 
-    .store .store-inner .store-text01 {
+    .store .store-inner .store-txt01 {
         width: 430px;
         height: 62px;
         top: 0;
@@ -1175,12 +1052,7 @@
         transform: translateX(-50%);
     }
 
-    .store .store-inner .store-text01.on {
-        top: 390px;
-        opacity: 1;
-    }
-
-    .store .store-inner .store-text02 {
+    .store .store-inner .store-txt02 {
         width: 440px;
         height: 129px;
         top: 800px;
@@ -1188,15 +1060,10 @@
         transform: translateX(-50%);
     }
 
-    .store .store-inner .store-text02.on {
-        top: 475px;
-        opacity: 1;
-    }
-
     /* end: STORE */
 }
 
-/* 구간3 ~/////////////////////// 660px */
+/* 구간3 ~/////////////////////// ~ 660px */
 @media all and (max-width: 660px) {
 
     /* start : REWARDS */
@@ -1302,7 +1169,7 @@
 
 }
 
-/* 구간4 ///////////////////////660px ~ */
+/* 구간4 /////////////////////// 660px ~ */
 @media all and (min-width: 660px) {
     .footer {
         padding: 32px 0 35px;
@@ -1355,7 +1222,7 @@
     /* end : FOOTER-AWARDS */
 
     /* start : FOOTER-COPYRIGHT */
-    .copyright .copy-text {
+    .copyright .copy-txt {
         width: 100%;
     }
 
@@ -1370,7 +1237,7 @@
     /* end : COPY-INFO */
 }
 
-/* 구간5 ///////////////////////640px ~ 960px */
+/* 구간5 /////////////////////// 640px ~ 960px */
 @media all and (min-width: 640px) and (max-width: 960px) {
 
     /* start : PICK */
@@ -1430,7 +1297,7 @@
         left: 770px;
     }
 
-    .store .store-inner .store-text01 {
+    .store .store-inner .store-txt01 {
         width: 440px;
         height: 65px;
         top: 0;
@@ -1438,12 +1305,7 @@
         transform: translateX(-50%);
     }
 
-    .store .store-inner .store-text01.on {
-        top: 390px;
-        opacity: 1;
-    }
-
-    .store .store-inner .store-text02 {
+    .store .store-inner .store-txt02 {
         width: 440px;
         height: 130px;
         top: 800px;
@@ -1451,15 +1313,10 @@
         transform: translateX(-50%);
     }
 
-    .store .store-inner .store-text02.on {
-        top: 475px;
-        opacity: 1;
-    }
-
     /* end : STORE */
 }
 
-/* 구간6 ~/////////////////////// 768px */
+/* 구간6 ~/////////////////////// 768px~ */
 @media all and (min-width: 768px) {
     .rewards .pc-br {
         display: block;
@@ -1962,10 +1819,6 @@
     /* end : RESERVE */
 
     /* start : PICK */
-    .pick .fade-in {
-        opacity: 1 !important;
-    }
-
     .pick .mobile-img {
         display: none;
     }
@@ -1996,26 +1849,18 @@
         top: 172px;
         left: -700px;
         transform: translateX(0);
-        transition: left 1.5s;
-    }
-
-    .pick .pick-txt01.on {
-        left: 200px;
+        opacity: 0;
     }
 
     .pick .pick-txt02 {
+        background: url("../images/pick/2023_pick_text2_img.png") no-repeat;
+        background-size: 100% auto;
         width: 360px;
         height: 160px;
         top: 417px;
         left: -700px;
         transform: translateX(0);
-        background: url("../images/pick/2023_pick_text2_img.png") no-repeat;
-        background-size: 100% auto;
-        transition: left 2.5s;
-    }
-
-    .pick .pick-txt02.on {
-        left: 97px;
+        opacity: 0;
     }
 
     .pick .pick-img {
@@ -2031,6 +1876,9 @@
     .pick .pick-btn {
         top: 602px;
         left: 391px;
+    }
+    .pick .pick-btn .btn{
+        transition: all 3s;
     }
 
     /* end : PICK */
@@ -2120,52 +1968,34 @@
         right: 190px;
     }
 
-    .store .store-inner .store-text01 {
+    .store .store-inner .store-txt01 {
         background: url("../images/store/pc_main_story_txt_1.png");
         width: 375px;
         height: 55px;
         top: 100px;
         right: -700px;
-        transition: all 1s;
     }
 
-    .store .store-inner .store-text01.on {
-        right: 260px;
-        opacity: 1;
-    }
-
-    .store .store-inner .store-text02 {
+    .store .store-inner .store-txt02 {
         background: url("../images/store/pc_main_story_txt_2.png");
         width: 370px;
         height: 90px;
         right: -700px;
         top: 170px;
-        transition: 1s;
-    }
-
-    .store .store-inner .store-text02.on {
-        right: 260px;
-        opacity: 1;
     }
 
     .store .store-inner .store-btn {
         top: 290px;
-        right: 510px;
+        right: -700px;
         left: initial;
         transform: initial;
     }
-
-    .store .store-inner .store-btn.on {
-        opacity: 1;
-        transition-delay: 1s;
-    }
-
     /* end: STORE */
 
 
 }
 
-/* 구간8 ///////////////////////1280px ~ */
+/* 구간8 /////////////////////// 1280px ~ */
 @media all and (min-width: 1280px) {
 
     /* start : HEADER */
@@ -2582,10 +2412,6 @@
     /* end : RESERVE */
 
     /* start : PICK */
-    .pick .fade-in {
-        opacity: 1 !important;
-    }
-
     .pick .mobile-img {
         display: none;
     }
@@ -2616,11 +2442,6 @@
         top: 172px;
         left: -700px;
         transform: translateX(0);
-        transition: left 1.5s;
-    }
-
-    .pick .inner .pick-txt01.on {
-        left: 200px;
     }
 
     .pick .inner .pick-txt02 {
@@ -2631,11 +2452,6 @@
         transform: translateX(0);
         background: url("../images/pick/2023_pick_text2_img.png") no-repeat;
         background-size: 100% auto;
-        transition: left 2.5s;
-    }
-
-    .pick .inner .pick-txt02.on {
-        left: 97px;
     }
 
     .pick .inner .pick-img {
@@ -2742,3 +2558,99 @@
 
     /* end : COPY-INFO */
 }
+
+
+/* start : main-banner 반응형 */
+@media all and (max-width: 1500px) {
+    .main-banner {
+        height: 500px;
+    }
+
+    .main-banner .inner .img-box {
+        width: 17%;
+    }
+
+    .main-banner .inner .txt-box {
+        width: 32%;
+    }
+}
+
+@media all and (max-width: 1200px) {
+    .main-banner {
+        height: 43vw;
+    }
+
+    .main-banner .inner {
+        max-width: 1124px;
+        position: relative;
+    }
+
+    .main-banner .inner .img-box {
+        width: 17%;
+    }
+
+    .main-banner .inner .txt-box {
+        width: 30%;
+    }
+}
+
+@media all and (max-width: 960px) {
+    .main-banner .pc-img {
+        display: none;
+    }
+
+    .main-banner .mobile-img {
+        display: block;
+        width: 100%;
+    }
+
+    .btn.fade-in {
+        display: block;
+    }
+
+    .btn.move {
+        display: none;
+    }
+
+    .main-banner {
+        background: url("../images/ad01/2023_m_summer2_promotion_bg_1.jpg")center/cover no-repeat;
+        height: 175vw;
+        position: relative;
+    }
+
+    .main-banner .inner {
+        position: relative;
+        max-width: 1124px;
+        margin: 0 auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-banner .inner .img-box {
+        margin-top: 14%;
+        width: 34.5%;
+    }
+
+    .main-banner .inner .txt-box {
+        width: 50%;
+        height: 100%;
+        margin: 13% 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .main-banner .inner .txt-box .ban-btn {
+        width: 73%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .main-banner .inner .txt-box .ban-btn .btn {
+        line-height: 10vw;
+        font-size: 23px;
+        margin-top: 13%;
+    }
+
+}
+/* end : main-banner 반응형 */
