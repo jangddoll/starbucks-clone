@@ -184,7 +184,6 @@ ScrollTrigger.matchMedia({
                 start: "top center",
                 endTrigger: ".footer",
                 end: "bottom 200px",
-                markers: true,
                 toggleActions: "restart none none reverse",
             },
             top: 360,
@@ -197,7 +196,6 @@ ScrollTrigger.matchMedia({
                 start: "top center",
                 endTrigger: ".footer",
                 end: "bottom 200px",
-                markers: true,
                 toggleActions: "restart none none reverse"
             },
             top: 430,
@@ -211,7 +209,6 @@ ScrollTrigger.matchMedia({
                 start: "top center",
                 endTrigger: ".footer",
                 end: "bottom 200px",
-                markers: true,
                 toggleActions: "restart none none reverse"
             },
             opacity: 1,
@@ -228,7 +225,6 @@ ScrollTrigger.matchMedia({
                 start: "top center",
                 endTrigger: ".footer",
                 end: "bottom 200px",
-                markers: true,
                 toggleActions: "restart none none reverse"
             },
             opacity: 1,
@@ -241,7 +237,6 @@ ScrollTrigger.matchMedia({
                 start: "top center",
                 endTrigger: ".footer",
                 end: "bottom 200px",
-                markers: true,
                 toggleActions: "restart none none reverse"
             },
             opacity: 1,
@@ -255,7 +250,6 @@ ScrollTrigger.matchMedia({
                 start: "top center",
                 endTrigger: ".footer",
                 end: "bottom 200px",
-                markers: true,
                 toggleActions: "restart none none reverse"
             },
             opacity: 1,
