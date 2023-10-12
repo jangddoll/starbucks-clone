@@ -10,6 +10,9 @@
 * GSAP ScrollTrigger
 
 # 페이지의 기능 설명
+* 클릭시 통합검색 창이 focus되며 width가 넓어짐
+  ![통합검색](https://github.com/jangddoll/starbucks-clone/assets/145321198/3d46a15b-4395-4142-8c4e-0a908a9a5d9b)
+
 * 아코디언 메뉴<br>
   ![starbucks01](https://github.com/jangddoll/starbucks-clone/assets/145321198/19bb3ed5-8b1e-4645-89d0-101edda270a7)
   * 바닐라 JS를 사용해 만든 아코디언 메뉴
