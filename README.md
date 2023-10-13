@@ -12,6 +12,8 @@
 # 페이지의 기능 설명
 * 클릭시 통합검색 창이 focus되며 width가 넓어짐
   ![통합검색](https://github.com/jangddoll/starbucks-clone/assets/145321198/3d46a15b-4395-4142-8c4e-0a908a9a5d9b)
+  <br>
+  <a href="https://velog.io/@jjangddol/%EC%8A%A4%ED%83%80%EB%B2%85%EC%8A%A4-%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9-%ED%81%B4%EB%A6%AD%EC%9C%BC%EB%A1%9C-%EA%B2%80%EC%83%89%EC%B0%BD-%ED%99%9C%EC%84%B1%ED%99%94" target="_blank">코드 해석 - 벨로그 링크</a>
 
 * 아코디언 메뉴<br>
   ![starbucks01](https://github.com/jangddoll/starbucks-clone/assets/145321198/19bb3ed5-8b1e-4645-89d0-101edda270a7)
