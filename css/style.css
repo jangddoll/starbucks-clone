@@ -1444,10 +1444,6 @@
         border-color: var(--main-color);
     }
 
-    .header .inner .util .search.focused .text span {
-        opacity: 0;
-    }
-
     .header .inner .util .search span {
         height: 24px;
         position: absolute;
@@ -2081,17 +2077,12 @@
         border: solid 1px #ccc;
         background: #fff;
         color: #777;
-        font-size: 12px;
         transition: width 0.4s;
     }
 
-    .header .inner .util .search input:focus {
+    .header .inner .util .search.focused input {
         width: 190px;
         border-color: var(--main-color);
-    }
-
-    .header .inner .util .search.focused .text span {
-        opacity: 0;
     }
 
     .header .inner .util .search span {
